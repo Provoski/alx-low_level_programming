@@ -8,6 +8,7 @@ int main(void)
 {
 	int num = 0;
 	char cha = 'a';
+
 	while (num < 10)
 	{
 		putchar((num % 10) + '0');
