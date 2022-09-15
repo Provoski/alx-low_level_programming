@@ -8,7 +8,6 @@
 
 int main(void)
 {
-	print_line(0);
-	print_line(10);	
+	fizz_buzz();
 	return (0);
 }
