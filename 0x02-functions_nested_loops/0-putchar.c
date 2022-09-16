@@ -1,10 +1,10 @@
 #include "main.h"
 /**
- * prt - print _putchar
+ * main - print "_putchar"
  * Description: it prints "_putchar" using _putchar command to std
- * Return: void
+ * Return: 0 on success
  */
-void prt(void)
+int main(void)
 {
 	_putchar('_');
 	_putchar('p');

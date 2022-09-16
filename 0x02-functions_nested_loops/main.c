@@ -1,4 +1,4 @@
-
+#include <stdio.h>
 #include "main.h"
 /**
  * main - master function
@@ -8,9 +8,7 @@
 
 int main(void)
 {
-	int r;
-
-	r  = print_sign(90);
-	_putchar(r + '0');	
+	times_table();
+		
 	return (0);
 }
