@@ -1,42 +1,37 @@
 #include <stdio.h>
 
 /**
- * fizz_buzz - replace specific alphabet with words
+ * main - replace specific alphabet with words
  * Return: no return type
  */
-void fizz_buzz(void)
+int main(void)
 {
 	int i;
 	char x;
-	char y;
-	char z;
-
 
 	for (i = 1; i <= 100; i++)
 	{
-		if (i % 3 == 0)
+		if ((i % 3 == 0) && (i % 5 == 0))
 		{
-			x = "Fizz";
-			printf("%c", x);
-			printf(" ");
+			printf("FizzBuzz");
 		}
 		else if (i % 5 == 0)
 		{
-			y = "Buzz";
-			printf("%c", y);
-			printf(" ");
+			printf("Buzz");
 		}
-		else if ((i % 3 == 0) && (i % 5 == 0))
+		else if (i % 3 == 0)
 		{
-			z = "FizzBuzz";
-			printf("%c", z);
-			printf(" ");
+			printf("Fizz");
 		}
 		else
 		{
 			printf("%d", i);
+		}
+		if (x != 100)
+		{
 			printf(" ");
 		}
 	}
 	printf("\n");
+	return (0);
 }

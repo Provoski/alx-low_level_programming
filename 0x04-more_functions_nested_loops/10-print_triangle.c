@@ -1,14 +1,15 @@
-#include "main.c"
+#include "main.h"
 
 /**
- * print_triangle - print square on screen
+ * print_triangle - print triangle on screen
  * @size: varible that determine size of the triagle
  * Return: no return type
  */
 void print_triangle(int size)
 {
-	int i;
-	int c;
+	int x;
+	int y;
+	int z;
 
 	if (size <= 0)
 	{
@@ -16,15 +17,17 @@ void print_triangle(int size)
 	}
 	else
 	{
-		for (i = 1; i <= size; ++i)
+		for (x = 0; x < size; x++)
 		{
-			for (c = 1; c <= i; ++c)
+			for (y = size - x; y > 1; y--)
 			{
 				_putchar('#');
-				`
+			}
+			for (z = 0; z <= x; z++)
+			{
+				_putchar('\n');
 			}
 			_putchar('\n');
 		}
 	}
-	_putchar('\n');
 }

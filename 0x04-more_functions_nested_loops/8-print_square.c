@@ -1,4 +1,4 @@
-#include "main.c"
+#include "main.h"
 
 /**
  * print_square - print square on screen
@@ -16,17 +16,13 @@ void print_square(int size)
 	}
 	else
 	{
-		for (i = 1; i <= size;)
+		for (i = 0; i < size; i++)
 		{
-			for (c = 1; c <= size;)
+			for (c = 1; c <= size; c++)
 			{
 				_putchar('#');
-				c++;
 			}
+			_putchar('\n');
 		}
-		c = 0;
-		i++;
-		_putchar('\n');
 	}
-	_putchar('\n');
 }
