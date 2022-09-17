@@ -23,8 +23,9 @@ void print_times_table(int n)
 				printf("%d", x * y);
 				if (y < n)
 				{
-					printf(", ");
+					printf(",");
 				}
+				printf("  ");
 			}
 			printf("\n");
 		}
