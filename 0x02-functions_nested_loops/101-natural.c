@@ -11,13 +11,18 @@ int main(void)
 	int i;
 	int sum_of_multiples = 0;
 
-	for (i = 0; i < 1024; i++)
+	for (i = 1; i < 1024; i++)
 	{
-		if ((i % 3 != 0) || (i % 5 != 0))
+		if (i % 3 == 0) 
 		{
-			continue;
+			sum_of_multiples += i;
 		}
-		sum_of_multiples += i;
+		else if (i % 5 == 0)
+		{
+			sum_of_multiples += i;
+		}
+		else
+		continue;
 	}
 	printf("%d", sum_of_multiples);
 	printf("\n");

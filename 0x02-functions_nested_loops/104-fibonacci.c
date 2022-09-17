@@ -8,9 +8,9 @@
 
 int main(void)
 {
-	long long int immediate_no = 1;
-	long long int previous_no = 0;
-	long long int sum_of_immediate_and_previous_no = 0;
+	long int immediate_no = 1;
+	long int previous_no = 0;
+	long int sum_of_immediate_and_previous_no = 0;
 	int counter;
 
 	for (counter = 0; counter < 98; counter++)
@@ -26,4 +26,5 @@ int main(void)
 		}
 	}
 	printf("\n");
+	return (0);
 }
