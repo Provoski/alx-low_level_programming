@@ -8,7 +8,9 @@
 
 int main(void)
 {
-	times_table();
+	print_times_table(10);
+	print_times_table(59);
+	print_times_table(0);
 		
 	return (0);
 }
