@@ -8,9 +8,7 @@
 
 int main(void)
 {
-	print_times_table(10);
-	print_times_table(59);
-	print_times_table(0);
+	print_to_98(10);
 		
 	return (0);
 }
