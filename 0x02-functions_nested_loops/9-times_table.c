@@ -16,9 +16,9 @@ void times_table(void)
 			printf("%d", x * y);
 			if (y < 9)
 			{
-				printf(" ");
-				printf(" ");
 				printf(",");
+				printf(" ");
+				printf(" ");
 			}
 		}
 		printf("\n");
