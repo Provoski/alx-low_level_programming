@@ -18,7 +18,7 @@ int main(void)
 		sum_of_immediate_and_previous_no = immediate_no + previous_no;
 		previous_no = immediate_no;
 		immediate_no = sum_of_immediate_and_previous_no;
-		printf("%lu", sum_of_immediate_and_previous_no);
+		printf("%ld", sum_of_immediate_and_previous_no);
 		if (counter < 97)
 		{
 			printf(",");
