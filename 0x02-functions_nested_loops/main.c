@@ -8,6 +8,6 @@
 
 int main(void)
 {
-	print_times_table(10);
+	jack_bauer();
 	return (0);
 }
