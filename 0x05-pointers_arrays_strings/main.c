@@ -1,5 +1,5 @@
-#include <stdio.h>
 #include "main.h"
+
 /**
  * main - master function
  * Description: entry point for other function
@@ -8,7 +8,10 @@
 
 int main(void)
 {
-	int n;
-	
+	char *str;
+ 
+	str = "my man";
+	_puts(str);
+
 	return (0);
 }
