@@ -9,22 +9,13 @@
 
 void print_rev(char *s)
 {
-<<<<<<< HEAD
 	int i;
-	int slen;
-	char *g;
-	g = '\0';
+	int lenght;
 
-	slen = strlen( s - 1);
-	if (s > 0)
+	lenght = strlen(s);
+	for (i = lenght - 1; i >= 0; i--)
 	{
-		for (i = 0; i < slen; i++)
-		{
-			g++;
-			printf("%c", g);
-		}
+		putchar(s[i]);
 	}
-=======
-	printf("%s\n", strrev(s));
->>>>>>> 95dec02dc8699be0b6b24bed3109baaa175e3452
+	printf("\n");
 }

@@ -8,11 +8,12 @@
 
 int main(void)
 {
-	int arr[2];
-	arr[0] = 23;
-	arr[1] = 54;
+	char s[10] = "My School";
 
-	print_array(arr, 2);
+    printf("%s\n", s);
+    rev_string(s);
+    printf("%s\n", s);
+   
 
 	return (0);
 }
