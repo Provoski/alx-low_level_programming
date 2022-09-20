@@ -11,7 +11,7 @@ int main(void)
 	char *str;
  
 	str = "my man";
-	print_rev(str);
+	_puts(str);
 
 	return (0);
 }
