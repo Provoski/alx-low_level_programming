@@ -8,10 +8,11 @@
 
 int main(void)
 {
-	char *str;
- 
-	str = "my man";
-	_puts(str);
+	int arr[2];
+	arr[0] = 23;
+	arr[1] = 54;
+
+	print_array(arr, 2);
 
 	return (0);
 }
