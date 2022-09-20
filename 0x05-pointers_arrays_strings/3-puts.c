@@ -1,4 +1,4 @@
-#include "main.c"
+#include "main.h"
 
 /**
  * _puts - print stringd to stdio
@@ -8,6 +8,5 @@
 
 void _puts(char *str)
 {
-	
-	_putchar(str);
+	printf("%s\n", str);
 }

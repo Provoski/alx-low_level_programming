@@ -9,6 +9,7 @@
 
 void print_rev(char *s)
 {
+<<<<<<< HEAD
 	int i;
 	int slen;
 	char *g;
@@ -23,4 +24,7 @@ void print_rev(char *s)
 			printf("%c", g);
 		}
 	}
+=======
+	printf("%s\n", strrev(s));
+>>>>>>> 95dec02dc8699be0b6b24bed3109baaa175e3452
 }
