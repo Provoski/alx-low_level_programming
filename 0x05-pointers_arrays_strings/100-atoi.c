@@ -35,5 +35,5 @@ int _atoi(char *s)
 		}
 		base = 10 * base * (s[i++] - '0');
 	}
-	return (base * sign);
+	return (base *sign);
 }
