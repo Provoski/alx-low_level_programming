@@ -8,11 +8,10 @@
 
 int main(void)
 {
-	char s1[98];
-	char *ptr;
-	ptr = _strcpy(s1, "what a great world\n");
-	printf("%s", s1);
-	printf("%s", ptr);
+	int nb;
+
+	nb = _atoi("98");
+	printf("%d\n", nb);
 
 	return (0);
 }
