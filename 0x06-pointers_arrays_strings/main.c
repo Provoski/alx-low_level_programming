@@ -11,7 +11,7 @@ int main(void)
 	char *pstr;
 
 
-	pstr = string_toupper(str);
+	pstr = cap_string(str);
 	printf("%s", pstr);
 	printf("%s", str);
 	return 0;
