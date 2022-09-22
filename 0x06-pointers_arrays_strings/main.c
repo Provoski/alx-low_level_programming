@@ -6,8 +6,13 @@
 
 int main(void)
 {
-	int s1[] = {46,5,4,34,5,6,5,56};
-	
-	reverse_array(s1, sizeof(s1)/sizeof(int));
+	char str[] =  "hello world";
+
+	char *pstr;
+
+
+	pstr = string_toupper(str);
+	printf("%s", pstr);
+	printf("%s", str);
 	return 0;
 }
