@@ -7,10 +7,7 @@
  * Return: com_string
  */
 
-int *_strcmp(char *s1, char *s2)
+int _strcmp(char *s1, char *s2)
 {
-	int *com_string;
-
-	com_string = strcmp(s1, s2);
-	return (com_string);
+	return (strcmp(s1, s2));
 }

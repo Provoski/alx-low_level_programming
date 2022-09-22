@@ -1,5 +1,4 @@
 #include "main.h"
-
 /**
  * main - program entry point
  * Return: 0 on success;
@@ -7,19 +6,11 @@
 
 int main(void)
 {
-	char s1[98] = "hello ";
-	char s2[] = "world!\n";
-	char *ptr;
+	char s1[] = "hello";
+	char s2[] = "world";
 
-	printf("%s\n", s1);
-	printf("%s", s2);
-	ptr = _strncat(s1,s2,1);
-	printf("%s\n", s1);
-	printf("%s", s2);
-	printf("%s\n", ptr);
-	ptr = _strncat(s1, s2, 1024);
-	printf("%s", s1);
-	printf("%s", s2);
-	printf("%s", ptr);
-	return (0);
+
+	printf("%d\n", _strcmp(s1, s2));
+	printf("%d\n", _strcmp(s1, s2));
+	return 0;
 }
