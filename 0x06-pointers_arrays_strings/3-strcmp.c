@@ -9,7 +9,7 @@
 
 int *_strcmp(char *s1, char *s2)
 {
-	int *con_string;
+	int *com_string;
 
 	com_string = strcmp(s1, s2);
 	return (com_string);
