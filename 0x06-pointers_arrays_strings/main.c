@@ -6,12 +6,12 @@
 
 int main(void)
 {
-	char str[] =  "hello world";
+	char str[] =  "hello world man only leave once \n";
 
 	char *pstr;
 
 
-	pstr = cap_string(str);
+	pstr = leet(str);
 	printf("%s", pstr);
 	printf("%s", str);
 	return 0;

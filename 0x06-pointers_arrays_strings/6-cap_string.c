@@ -17,15 +17,13 @@ char *cap_string(char *str)
 		{
 			str[i] = str[i] - 32;
 		}
-	}
-	for (n = 0; str[n] != '\0'; n++)
-	{
-		if (str[n] == 32 && str[n + 1] >= 65 && str[n + 1] <= 90)
+		if (str[i] == 32)
 		{
-			continue;
+			if (str[i + 1] >= 65 && str[i + 1] <= 90)
+			break;
 		}
 		else
-		str[n] = str[n] + 32;
+		str[i] = str[i] + 32;
 	}
 	return (str);
 }
