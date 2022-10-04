@@ -3,9 +3,9 @@
 #include <stdlib.h>
 
 /**
- * free_grid - a function that free memory space allocated for a 
+ * free_grid - a function that free memory space allocated for a
  * two dimensional array
- * @grid: array row memory size 
+ * @grid: array row memory size
  * @height: array column memory size
  * Return: Non
  */
@@ -17,6 +17,6 @@ void free_grid(int **grid, int height)
 	for (row_index = 0; row_index < height; row_index++)
 	{
 		free(grid[row_index]);
-		free(grid);
 	}
+	free(grid);
 }
