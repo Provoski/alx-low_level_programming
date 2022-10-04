@@ -20,18 +20,13 @@ char *str_concat(char *s1, char *s2)
 	unsigned int s2_index;
 
 	concat_len = 0;
-	if (s1 == NULL && s2 == NULL)
-	{
-		s1 = " ";
-		s2 = " ";
-	}
 	if (s1 == NULL && s2 != NULL)
 	{
-		s1 = " ";
+		s1 = '\0';
 	}
 	if (s1 != NULL && s2 == NULL)
 	{
-		s2 = " ";
+		s2 = '\0';
 	}
 	for (s1_index = 0; s1[s1_index]; s1_index++)
 	{
