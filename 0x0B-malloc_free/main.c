@@ -10,7 +10,7 @@ int main(void)
 {
 	char *s;
 
-	s = str_concat("ALX SE", "IN MAKING");
+	s = str_concat("ALX SE ", "IN MAKING");
 	if (s == NULL)
 	{
 		printf("failed to allocate memory\n");
