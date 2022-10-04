@@ -20,13 +20,13 @@ char *str_concat(char *s1, char *s2)
 	unsigned int s2_index;
 
 	concat_len = 0;
-	if (s1 == NULL && s2 != NULL)
+	if (s1 == NULL)
 	{
-		s1 = '\0';
+		s1 = "\0";
 	}
-	if (s1 != NULL && s2 == NULL)
+	if (s2 == NULL)
 	{
-		s2 = '\0';
+		s2 = "\0";
 	}
 	for (s1_index = 0; s1[s1_index]; s1_index++)
 	{
@@ -36,7 +36,7 @@ char *str_concat(char *s1, char *s2)
 	{
 		;
 	} concat_len = s1_index + s2_index;
-	concantenate = (char *) malloc(sizeof(char) * concat_len);
+	concantenate = (char *) malloc(sizeof(char) * concat_len + 7);
 	if (concantenate == NULL)
 	return (NULL);
 	for (index = 0; s1[index]; index++)
