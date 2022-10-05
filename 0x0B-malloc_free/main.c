@@ -6,17 +6,16 @@
  * main - program testing and execution function
  * Return: always 0
  */
-int main(void)
+int main(int ac, char *av[])
 {
 	char *s;
 
-	s = str_concat("ALX SE", "IN MAKING");
+	s = argstostr(ac, av);
 	if (s == NULL)
 	{
-		printf("failed to allocate memory\n");
 		return (1);
 	}
-	printf("%s\n", s);
+	printf("%s", s);
 	free(s);
 	return (0);
 }
