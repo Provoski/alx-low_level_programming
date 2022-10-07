@@ -12,23 +12,17 @@
 
 void *_calloc(unsigned int nmemb, unsigned int size)
 {
-	void *arr_mem;
+	char *arr_mem;
 	unsigned int index;
 
 	if (nmemb == 0 || size == 0)
 	return (NULL);
-	arr_mem = malloc(sizeof(arr_mem) * nmemb);
+	arr_mem = malloc(nmemb * size);
 	if (arr_mem == NULL)
 	return (NULL);
 	for (index = 0; index < nmemb; index++)
 	{
-		arr_mem[index] = malloc(sizeof(void *) * size);
-		if (arr_mem[index] == NULL)
-		{
-			free(arr_mem[index--]);
-		}
-		free(arr_mem);
-		return (NULL);
+		arr_mem[index] = 0;
 	}
 	return (arr_mem);
 }

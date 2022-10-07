@@ -9,15 +9,10 @@
 
 void *malloc_checked(unsigned int b)
 {
-	if (b <= INT_MAX)
-	{
-		malloc(b);
-		if (malloc(b) == NULL)
-		exit(98);
-		return (malloc(b));
-	}
-	else
-	{
-		exit(98);
-	}
+	int *mem;
+
+	mem = malloc(b);
+	if (mem == NULL)
+	exit(98);
+	return (mem);
 }
