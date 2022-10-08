@@ -1,6 +1,7 @@
 #include "main.h"
 #include <stdlib.h>
 #include <limits.h>
+#include <string.h>
 
 /**
  * _calloc -  a function that allocate memory using
@@ -13,9 +14,7 @@
 void *_calloc(unsigned int nmemb, unsigned int size)
 {
 	int *mem;
-	unsigned int index;
 
-	index = 0;
 	if (nmemb == 0 || size == 0)
 	{
 		return (NULL);
@@ -25,10 +24,6 @@ void *_calloc(unsigned int nmemb, unsigned int size)
 	{
 		return (NULL);
 	}
-	while (mem[index])
-	{
-		mem[index] = 0;
-		index++;
-	}
+	memset(mem, 0, nmemb * size);
 	return (mem);
 }
