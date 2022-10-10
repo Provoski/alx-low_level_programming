@@ -1,5 +1,10 @@
-#ifndef SUM
+#include <stdio.h>
+#ifndef SUM_H
+#define SUM_H
 
-#define SUM(x, y) ((x) + (y))
+int SUM(int x, int y)
+{
+	return (x + y);
+}
 
-#endif /* #ifndef SUM */
+#endif /* #ifndef SUM_H */
