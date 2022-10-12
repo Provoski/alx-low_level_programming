@@ -6,20 +6,21 @@
  */
 char *leet(char *s)
 {
+	char strchk1[6] = {'a', 'e', 'o', 't', 'l'};
+	char strchk2[6] = {'A', 'E', 'O', 'T', 'L'};
+	int replacer[6] = {'4', '3', '0', '7', '1'};
 	int i;
+	int x;
 
-	for (i = 0; s[i] != '\0'; i++)
+	for (i = 0; s[i]; i++)
 	{
-		if (s[i] == 'a' || s[i] == 'A')
-		s[i] = (4 + '0');
-		if (s[i] == 'e' || s[i] == 'E')
-		s[i] = (3 + '0');
-		if (s[i] == 'o' || s[i] == 'O')
-		s[i] = (0 + '0');
-		if (s[i] == 't' || s[i] == 'T')
-		s[i] = (7 + '0');
-		if (s[i] == 'l' || s[i] == 'L')
-		s[i] = (1 + '0');
+		for (x = 0; strchk1[x] && strchk2[x] && replacer[x]; x++)
+		{
+			if (s[i] == strchk1[x] || s[i] == strchk2[x])
+			{
+				s[i] = replacer[x];
+			}
+		}
 	}
 	return (s);
 }
