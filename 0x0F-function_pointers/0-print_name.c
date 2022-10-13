@@ -1,3 +1,5 @@
+#include <stdlib.h>
+
 /**
  * print_name - it prints a name
  * @name: name variable
