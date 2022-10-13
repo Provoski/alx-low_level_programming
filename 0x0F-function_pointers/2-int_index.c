@@ -1,3 +1,5 @@
+#include <stdlib.h>
+
 /**
  * int_index - a function that search for integer from array element
  * @array: array variable
@@ -14,6 +16,8 @@ int int_index(int *array, int size, int (*cmp)(int))
 	int flag;
 
 	temp = 0;
+	if (array == NULL || cmp == NULL)
+		return;
 	flag = 0;
 	if (size <= 0)
 		return (-1);
