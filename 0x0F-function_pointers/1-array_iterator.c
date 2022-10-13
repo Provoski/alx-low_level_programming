@@ -1,3 +1,5 @@
+#include <stdlib.h>
+
 /**
  * array_iterator - perform a specific operation on all
  * element of an array
@@ -13,6 +15,8 @@ void array_iterator(int *array, int size, void (*action)(int))
 	int temp;
 
 	temp = 0;
+	if (array == NULL || action == NULL)
+		return;
 	for (index = 0; index < size; index++)
 	{
 		temp = array[index];
