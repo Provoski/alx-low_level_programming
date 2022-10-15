@@ -1,44 +1,58 @@
 #include <stdio.h>
-#include <stdarg.h>
 #include <string.h>
+#include <stdarg.h>
 
-/**
- * print_all - prints anything
- * @format: print format variable
- * Return: Nothing
- */
 void print_all(const char * const format, ...)
 {
-	int index;
-	int int_val;
-	float float_val;
-	char char_val;
-	char *string_val;
-	char format_array[4] = {'c', 's', 'f' , 'i'};
-	int len;
-	va_list format_list;
+	int i;
+	int j;
+	int z;
+	char specifier[] = "cefs";
+	int counter;
+	int add_seperator;
+	int success_count;
+	char *str;
+	va_list ap;
 
-	index = 0;
-	len = strlen(format);
-	va_start(format_list, format);
-	while (index < len)
+	va_start(ap, format);
+	i = 0;
+	success_count = 0;
+	while (format[i] != '\0')
 	{
-		switch (*format)
+		counter = 0;
+		switch (format[i])
 		{
 			case 'c':
-				char_val = va_arg(format_list, char);
-				printf("%c", char_val);
+				printf("%c", va_arg(ap, int));
+				counter += 1;
 				break;
 			case 'i':
-				int_val = va_arg(format_list, int);
-				printf("%d", int_val);
+				printf("%d", va_arg(ap, int));
+				counter += 1;
 				break;
 			case 'f':
-				float_val = va_arg(format_list, float);
-				printf("%f", float_val);
+				printf("%f", va_arg(ap, double));
+				counter += 1;
 				break;
-			case 'f':
+			case 's':
+				str = va_arg(ap, char*);
+				if (str == NULL)
+					str = "(nil)";
+				counter += 1;
+				printf("%s", str);
+				break;
 		}
+		i++;
 	}
-	va_end(format_list);
+	va_end(ap);
+	printf("\n");
+	printf("the function iterated %d\n", i);
+	printf("success is %d\n", success_count);
+}
+
+void print_all(const char * const format, ...);
+int main(void)
+		{
+	print_all("ceis", 'B', 3, "stSchool");
+	return (0);
 }
