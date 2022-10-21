@@ -16,5 +16,6 @@ typedef struct list_s
 	struct list_s *next;
 } list_t;
 
+int print_list(const list_t *h);
 int _putchar(char c);
 #endif /* LIST_H */
