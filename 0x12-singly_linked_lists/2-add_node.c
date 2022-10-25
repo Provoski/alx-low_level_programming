@@ -4,7 +4,7 @@
 #include "lists.h"
 
 /**
- * add_node - a functiin that had node to a the end of a list
+ * add_node - a functiin that add node to the begining of a list
  * @head: the head of the list
  * @str: string to be duplicated
  * Return: address of new element or NULL if it fails

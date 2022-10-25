@@ -4,31 +4,32 @@
 #include "lists.h"
 
 /**
- * add_node_end - a functiin that had node to a the end of a list
+ * add_node_end - a functiin that had node to the end of a list
  * @head: the head of the list
  * @str: string to be duplicated
  * Return: address of new element or NULL if it fails
  */
 list_t *add_node_end(list_t **head, const char *str)
 {
-	list_t *new;
-	list_t *last;
+	list_t *newnode;
+	list_t *temp;
 
-	new = malloc(sizeof(list_t));
-	if (!new)
+	newnode = malloc(sizeof(list_t));
+	if (!newnode)
+	{
 		return (NULL);
-
-	new->str = strdup(str);
-	new->next = NULL;
-	if (*head == NULL)
-	{
-		*head = new;
-		last = new;
 	}
-	else
+	newnode->str = strdup(str);
+	newnode->len = strlen(newnode->str);
+	newnode->next = NULL;
+	while (*head == NULL)
 	{
-		last->next = new->next;
-		last = new-> next;
+		*head = newnode;
 	}
-	return (new);
+	while (temp->next != NULL)
+	{
+		temp = temp->next;
+	}
+	temp->next = newnode;
+	return (temp);
 }
