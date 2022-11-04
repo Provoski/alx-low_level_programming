@@ -12,40 +12,46 @@
  * Return: 1 on success, 98 if it can't read from file (file_from)
  * 99 if it can't read to file (file_to)
  */
-int copy_file(char *file_from, char *file_to)
+void copy_file(char *file_from, char *file_to)
 {
-	int fd1, fd2, len1, len2, buffer_len, err_read, err_write;
+	int fd1, fd2, buffer_len, read_err, write_err, close_err;
 	char buffer[1024];
 
-	buffer_len = 0;
-	len1 = strlen(file_from);
-	len2 = strlen(file_to);
 	fd1 = open(file_from, O_RDONLY);
-	if (fd1 == -1)
+	read_err = read(fd1, buffer, 1024);
+	if ((fd1 == -1) | (read_err == -1))
 	{
 		write(2, "Error: Can't read from file ", 28);
-		write(2, file_from, len1);
+		write(2, file_from, strlen(file_from));
 		write(2, "\n", 1);
 		exit(98);
 	}
-	err_read = read(fd1, buffer, 1024);
-	if (err_read == -1)
-		return (98);
-	close(fd1);
+	close_err = close(fd1);
+	if (close_err == -1)
+	{
+		write(2, "Error: Can't close fd ", 22);
+		dprintf(2, "%d", fd1);
+		write(2, "\n", 1);
+		exit(98);
+	}
 	buffer_len = strlen(buffer);
 	fd2 = open(file_to,  O_WRONLY | O_CREAT | O_TRUNC, 00664);
-	if (fd2 == -1)
+	write_err = write(fd2, buffer, (buffer_len - 2));
+	if ((fd2 == -1) | (write_err == -1))
 	{
 		write(2, "Error: Can't write to file ", 28);
-		write(2, file_to, len2);
+		write(2, file_to, strlen(file_to));
 		write(2, "\n", 1);
 		exit(99);
 	}
-	err_write = write(fd2, buffer, (buffer_len - 1));
-	if (err_write == -1)
-		return (99);
-	close(fd2);
-	return (1);
+	close_err = close(fd2);
+	if (close_err == -1)
+	{
+		write(2, "Error: Can't close fd ", 22);
+		dprintf(2, "%d", fd1);
+		write(2, "\n", 1);
+		exit(100);
+	}
 }
 
 /**
