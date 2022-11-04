@@ -13,7 +13,7 @@
  * @letters: number of byte to read from file
  * Return: lenght of output string on success or 0 on failure
  */
-ssize_t read_textfile(const char *filename, size_t letters)
+size_t read_textfile(const char *filename, size_t letters)
 {
 	int fd;
 	int i, n;
