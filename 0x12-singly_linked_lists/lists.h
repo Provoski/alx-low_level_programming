@@ -1,6 +1,7 @@
 #ifndef LIST_H
 #define LIST_H
-
+#include "101-hello_holberton.asm"
+#include "101-hello_holberton.o"
 /**
  * struct list_s - singly linked list
  * @str: string - (malloc'ed string)

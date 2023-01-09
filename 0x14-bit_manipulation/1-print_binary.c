@@ -2,7 +2,7 @@
 #include <stdio.h>
 #include <stdlib.h>
 
-int vallen1(int n);
+int vallen1(unsigned long int n);
 /**
  * print_binary - print binary equivalent of decimal number
  * @n: decimal value variable
@@ -10,8 +10,8 @@ int vallen1(int n);
  */
 void print_binary(unsigned long int n)
 {
-	int len;
-	int temp;
+	unsigned long int len;
+	unsigned long int temp;
 
 	len = vallen1(n);
 	temp = 0;
@@ -36,9 +36,9 @@ void print_binary(unsigned long int n)
  * @n: integer variable
  * Return: count
  */
-int vallen1(int n)
+int vallen1(unsigned long int n)
 {
-	int div;
+	unsigned long int div;
 	int count;
 
 	count = 0;
