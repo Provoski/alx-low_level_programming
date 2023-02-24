@@ -2,8 +2,9 @@ SRC = main.c school.c
 CC = gcc
 OBJ = main.o school.o
 NAME = school
-all: $(NAME)
 $(NAME): $(OBJ)
 	$(CC) $^ -o $@
+all: $(OBJ)
+	$(CC) $^ -o $(NAME)
 %.o: %.c
 	$(CC) -c -o $@ $<
