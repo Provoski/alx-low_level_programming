@@ -17,21 +17,13 @@ size_t read_textfile(const char *filename, size_t letters)
 {
 	int fd;
 	size_t i, n;
-	char *buff[1024];
+	char *buff[2050];
 
 	fd = open(filename, O_RDONLY);
 	if (fd == -1)
 		return (0);
 	i = read(fd, buff, letters);
 	n = write(1, buff, i);
-	if (n > letters || n != letters)
-	{
-		close(fd);
-		return (0);
-	}
-	else
-	{
-		close(fd);
-		return (n);
-	}
+	close(fd);
+	return(n);
 }
