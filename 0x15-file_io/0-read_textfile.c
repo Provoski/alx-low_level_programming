@@ -25,8 +25,13 @@ size_t read_textfile(const char *filename, size_t letters)
 	i = read(fd, buff, letters);
 	n = write(1, buff, i);
 	if (n > letters || n != letters)
+	{
+		close(fd);
 		return (0);
+	}
 	else
+	{
+		close(fd);
 		return (n);
-	close(fd);
+	}
 }
