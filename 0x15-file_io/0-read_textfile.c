@@ -23,7 +23,7 @@ size_t read_textfile(const char *filename, size_t letters)
 	if (fd == -1)
 		return (0);
 	i = read(fd, buff, letters);
-	n = write(1, buff, i)
+	n = write(1, buff, i);
 	close(fd);
 	return (n);
 }
