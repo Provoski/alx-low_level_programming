@@ -16,7 +16,7 @@
 size_t read_textfile(const char *filename, size_t letters)
 {
 	int fd;
-	int i, n;
+	size_t i, n;
 	char *buff[1024];
 
 	fd = open(filename, O_RDONLY);
