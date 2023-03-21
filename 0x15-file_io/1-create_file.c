@@ -14,24 +14,28 @@
  */
 int create_file(const char *filename, char *text_content)
 {
-	int fd, len;
+	int fd, len, i;
 
-	len = strlen(text_content);
 	if (filename == NULL)
 		return (-1);
 	if (text_content == NULL)
 		text_content = "";
-	fd = open(filename, O_WRONLY | O_RDONLY | O_CREAT | O_TRUNC, 00600);
+	len = strlen(text_content);
+	fd = open(filename, O_WRONLY | O_RDONLY | O_CREAT | O_TRUNC, 0600);
 	if (fd == -1)
 	{
 		write(1, "fails", 5);
 		return (-1);
 	}
-	if (write(fd, text_content, len))
+	i = write(fd, text_content, len)
+	if (i > -1)
 	{
 		return (1);
 	}
 	else
+	{
+		write(1, "fails", 5);
 		return (-1);
+	}
 	close(fd);
 }
