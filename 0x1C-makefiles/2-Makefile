@@ -6,5 +6,5 @@ $(NAME): $(OBJ)
 	$(CC) $^ -o $@
 all: $(OBJ)
 	$(CC) $^ -o $(NAME)
-%.o: %.c
-	$(CC) -c -o $@ $<
+school: school.o
+	$(CC) main.o school.o -o school	
