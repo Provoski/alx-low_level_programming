@@ -1,28 +1,6 @@
 #include <stdio.h>
 
 /**
- * print_left: array from start to end
- * using binary search algorithm
- * @start: array stating point
- * @end: array end point
- * Return: None
- */
-int print_left(int start, int end)
-{
-	int n;
-
-	for (n = start; n <= end ; n++)
-	{
-		printf("%d", n);
-		if (n < end)
-			printf(", ");
-		if (n == end)
-			printf("\n");
-	}
-	return (0);
-}
-
-/**
  * binary_search: that searches for a value in a sorted array of
  * integers  - using the Binary search algorithm
  * @array: pointer to first element of array
@@ -33,56 +11,31 @@ int print_left(int start, int end)
  */
 int binary_search(int *array, size_t size, int value)
 {
-	int left, n, right, mid;
+	int low, n, high, mid;
 	int size_n = size;
 
-	left = 0;
-	right = size_n - 1;
-	printf("Searching in array: ");
-	for (n = 0; n <= right; n++)
+	low = 0;
+	high = size_n - 1;
+	if (!array)
+		return (-1);
+	while (low <= high)
 	{
-		printf("%d", n);
-		if (n < right)
-			printf(", ");
-		if (n == right)
-			printf("\n");
-	}
-	while (left <= right)
-	{
-		mid = ((right + left) / 2);
-		printf("mid = %d\n", mid);
-		if (array[mid] == value)
-			return (mid);
+		mid = low + ((high - low) / 2);
+		printf("Searching in array: ");
+		for (n = low; n <= high; n++)
+		{
+			printf("%d", n);
+			if (n < high)
+				printf(", ");
+			if (n == high)
+				printf("\n");
+		}
+		if (value == array[mid])
+			return array[mid];
 		if (value > array[mid])
-		{
-			if (mid == size_n - 1)
-				break;
-			left  = mid + 1;
-			printf("Searching in array: ");
-			for (n = left; n <= right; n++)
-			{
-				printf("%d", n);
-				if (n < right)
-					printf(", ");
-				if (n == right)
-					printf("\n");
-			}
-		}
-		else
-		{
-			if (mid == 0)
-				break;
-			right = mid - 1;
-			printf("Searching in array: ");
-			for (n = left; n <= right; n++)
-			{
-				printf("%d", n);
-				if (n < right)
-					printf(", ");
-				if (n == right)
-					printf("\n");
-			}
-		}
+			low = mid + 1;
+		if (value < array[mid])
+			high = mid - 1;	
 	}
 	return (-1);
 }
