@@ -1,1 +1,1 @@
-0(sqrt(n) + k)
+O(sqrt(n) + k)
